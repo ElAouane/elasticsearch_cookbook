@@ -87,10 +87,10 @@ path.logs: /var/log/elasticsearch
 #
 #action.destructive_requires_name: true
 
-#cluster.name: production
-#node.name: node-1
+cluster.name: production
+node.name: node-1
 network.host: 0.0.0.0
-discovery.type: single-node
-#http.port: 9200
-#discovery.seed_hosts: ["host1"]
-#cluster.initial_master_nodes: ["10.0.105.100"]
+#discovery.type: single-node
+http.port: 9200
+discovery.seed_hosts: ["10.0.105.100"]
+cluster.initial_master_nodes: ["10.0.105.100"]
