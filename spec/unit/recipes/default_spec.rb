@@ -15,6 +15,9 @@ describe 'elasticsearch_cookbook::default' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
+    it 'enables the elasticsearch service' do
+      expect(chef_run).to enable_service 'elasticsearch'
+    end
 
     it 'should update source list' do
      expect(chef_run).to update_apt_update('update_sources')

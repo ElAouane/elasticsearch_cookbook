@@ -43,3 +43,8 @@ end
 execute 'fix_template' do
   command 'sudo chmod go-w /etc/elasticsearch/elasticsearch.yml'
 end
+
+service 'elasticsearch' do
+  supports status: true, restart: true, reload: true
+  action [:enable, :start]
+end
