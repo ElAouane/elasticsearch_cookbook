@@ -27,3 +27,7 @@ end
 describe package('apt-transport-https') do
   it { should be_installed }
 end
+
+describe package ('heartbeat-elastic') do
+  it { should be_installed }
+end

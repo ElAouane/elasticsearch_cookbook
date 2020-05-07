@@ -26,5 +26,13 @@ describe 'elasticsearch::default' do
     it 'should create an elasticsearch template in /etc/elasticsearch/elasticsearch.yml' do
       expect(chef_run).to create_template('/etc/elasticsearch/elasticsearch.yml')
     end
+
+    it 'should create an heartbeat template in /etc/heartbeat/heartbeat.yml' do
+      expect(chef_run).to create_template('etc/heartbeat/heartbeat.yml')
+    end
+
+    it 'should create an heartbeatdemo template in /etc/heartbeat/monitors.d/heartbeatdemo.yml' do
+      expect(chef_run).to create_template('etc/heartbeat/monitors.d/heartbeatdemo.yml')
+    end
   end
 end

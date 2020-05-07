@@ -1,0 +1,6 @@
+- type: tcp
+  name: heatbeatdemo
+  enabled: true
+  schedule: "@every 5s"
+  hosts: ["10.0.105.100:9200", "10.0.105.101:5601", "10.0.105.102:5044"]
+  timeouts: 360s
