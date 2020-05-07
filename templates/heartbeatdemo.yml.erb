@@ -1,6 +1,7 @@
-- type: http
+- type: tcp
   name: heatbeatdemo
   enabled: true
   schedule: "@every 5s"
-  urls: ["http://10.0.105.100:9200", "http://10.0.105.101:5601", "http://10.0.105.102:5044"]
+  hosts: ["10.0.105.100", "10.0.105.101", "10.0.105.102"]
+  ports: [9200, 5601, 5044]
   timeouts: 10s
