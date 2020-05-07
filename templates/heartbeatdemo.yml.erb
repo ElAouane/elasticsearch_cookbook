@@ -1,6 +1,25 @@
 - type: tcp
-  name: heatbeatdemo
+  name: elasticsearch
   enabled: true
   schedule: "@every 5s"
   hosts: ["10.0.105.100:9200", "10.0.105.101:5601", "10.0.105.102:5044"]
   timeouts: 10s
+
+- type: tcp
+  name: kibana
+  enabled: true
+  schedule: "@every 5s"
+  hosts: ["10.0.105.101:5601"]
+  timeouts: 10s
+
+- type: tcp
+  name: logstash
+  enabled: true
+  schedule: "@every 5s"
+  hosts: ["10.0.105.102:5044"]
+
+- type: tcp
+  name: instance
+  enabled: true
+  schedules: "@every 5s"
+  ports: [80]
