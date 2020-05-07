@@ -21,6 +21,18 @@ heartbeat.config.monitors:
 
 # Configure monitors inline
 heartbeat.monitors:
+- type: http
+  # ID used to uniquely identify this monitor in elasticsearch even if the config changes
+  id: my-monitor
+  # Human readable display name for this service in Uptime UI and elsewhere
+  name: My Monitor
+  # List or urls to query
+  urls: ["http://10.0.105.100:9200"]
+  # Configure task schedule
+  schedule: '@every 5s'
+  # Total test connection and data exchange timeout
+  #timeout: 16s
+
 
 
 #==================== Elasticsearch template setting ==========================
@@ -96,7 +108,7 @@ output.elasticsearch:
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   # The Logstash hosts
-  hosts: ["10.0.105.102:5044"]
+  #hosts: ["10.0.105.102:5044"]
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
   #ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
