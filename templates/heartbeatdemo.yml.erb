@@ -28,7 +28,8 @@
   name: MongoDB-Primary
   enabled: true
   schedules: "@every 5s"
-  hosts: ["10.0.1.100:27017"]
+  hosts: ["10.0.1.100"]
+  port: [27017, 27019]
 
 - type: tcp
   name: MongoDB-Primary
